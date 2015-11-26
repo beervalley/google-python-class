@@ -41,7 +41,6 @@ def extract_names(filename):
   ['2006', 'Aaliyah 91', Aaron 57', 'Abagail 895', ' ...]
   """
   # +++your code here+++
-  year = 0
   name_dict = {}
   name_rank = []
   
