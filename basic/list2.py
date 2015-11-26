@@ -15,18 +15,18 @@
 def remove_adjacent(nums):
   # +++your code here+++
   if len(nums) == 0:
-  	return nums
+    return nums
   
   new_nums = []
   new_nums.append(nums[0])
   pos = 0
   
   for num in nums[1:]:
-  	if num != new_nums[pos]:
-  		new_nums.append(num)
-  		pos += 1
-  	else:
-  		continue
+    if num != new_nums[pos]:
+      new_nums.append(num)
+      pos += 1
+    else:
+      continue
   	
   return new_nums
 
