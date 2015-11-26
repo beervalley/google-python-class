@@ -57,11 +57,11 @@ def mimic_dict(filename):
   
   prev = ''
   for word in word_list:
-  	if not prev in words:
-  		words[prev] = [word]
-  	else:
-  		words[prev].append(word)
-  	prev = word
+    if not prev in words:
+      words[prev] = [word]
+    else:
+      words[prev].append(word)
+    prev = word
   
   return words
 
@@ -70,11 +70,11 @@ def print_mimic(mimic_dict, word):
   """Given mimic dict and start word, prints 200 random words."""
   # +++your code here+++
   for unused_i in range(200):
-  	print word,
-  	if word in mimic_dict:
-  		word = random.choice(mimic_dict[word])
-  	else:
-  		word = random.choice(mimic_dict[''])
+    print word,
+    if word in mimic_dict:
+      word = random.choice(mimic_dict[word])
+    else:
+      word = random.choice(mimic_dict[''])
   
 
 
