@@ -47,7 +47,6 @@ import sys
 
 def print_words(filename):
   f = open(filename, 'rU')
-	
   words = {}
 	
   for line in f:
