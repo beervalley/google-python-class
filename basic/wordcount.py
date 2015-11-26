@@ -46,58 +46,58 @@ import sys
 # Then print_words() and print_top() can just call the utility function.
 
 def print_words(filename):
-	f = open(filename, 'rU')
+  f = open(filename, 'rU')
 	
-	words = {}
+  words = {}
 	
-	for line in f:
-		word_list = line.split()
-		for word in word_list:
-			word = word.lower()
-			if word not in words:
-				words[word] = 1
-			else:
-				words[word] += 1
+  for line in f:
+    word_list = line.split()
+      for word in word_list:
+        word = word.lower()
+	  if word not in words:
+	    words[word] = 1
+          else:
+            words[word] += 1
 	
-	f.close()
+  f.close()
 	
-	for key in sorted(words):
-		print key + ' ' + str(words[key])
+  for key in sorted(words):
+    print key + ' ' + str(words[key])
 
 
 def word_count(word_count):
-	return word_count[1]
+  return word_count[1]
 
 
 def print_top(filename):
-	f = open(filename, 'rU')
+  f = open(filename, 'rU')
 	
-	words = {}
+  words = {}
 	
-	for line in f:
-		word_list = line.split()
-		for word in word_list:
-			word = word.lower()
-			if word not in words:
-				words[word] = 1
-			else:
-				words[word] += 1
+  for line in f:
+    word_list = line.split()
+      for word in word_list:
+	word = word.lower()
+	if word not in words:
+	  words[word] = 1
+        else:
+	  words[word] += 1
 	
-	f.close()
+  f.close()
 	
-	sorted_words = sorted(words.items(), key=word_count, reverse=True)
+  sorted_words = sorted(words.items(), key=word_count, reverse=True)
 	
-	"""
-	# method one: iteration a tuple list not a dict
-	count = 0
-	for k, v in sorted_words:
-		print k + ' ' + str(v)
-		count += 1
-		if count > 20: break  """
+  """
+  # method one: iteration a tuple list not a dict
+  count = 0
+  for k, v in sorted_words:
+    print k + ' ' + str(v)
+    count += 1
+    if count > 20: break  """
 	
-	# method two: in fact, (key, value) in a python dict are tuples
-	for item in sorted_words[:20]:
-		print item[0], item[1]
+  # method two: in fact, (key, value) in a python dict are tuples
+  for item in sorted_words[:20]:
+    print item[0], item[1]
 		
 
 ###
