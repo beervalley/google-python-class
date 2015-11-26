@@ -18,10 +18,10 @@
 def verbing(s):
   # +++your code here+++
   if len(s) >= 3:
-  	if s[-3:] == 'ing':
-  		s = s + 'ly'
-  	else:
-  		s = s + 'ing'
+    if s[-3:] == 'ing':
+      s = s + 'ly'
+    else:
+      s = s + 'ing'
   
   return s
 
@@ -40,7 +40,7 @@ def not_bad(s):
   bad_pos = s.find('bad')
   
   if not_pos != -1 and bad_pos != -1 and not_pos < bad_pos:
-  	s = s[:not_pos] + 'good' + s[(bad_pos + 3):]
+    s = s[:not_pos] + 'good' + s[(bad_pos + 3):]
   return s
 
 
@@ -55,11 +55,11 @@ def front_back(a, b):
   # +++your code here+++
   mid1 = len(a) / 2
   if len(a) % 2 == 1:
-  	mid1 = mid1 + 1
+    mid1 = mid1 + 1
   
   mid2 = len(b) / 2
   if len(b) % 2 == 1:
-  	mid2 += 1
+    mid2 += 1
   	
   return a[:mid1] + b[:mid2] + a[mid1:] + b[mid2:]
   
