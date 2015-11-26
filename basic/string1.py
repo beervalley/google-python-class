@@ -26,9 +26,9 @@
 def donuts(count):
   # +++your code here+++
   if count < 10:
-  	return "Number of donuts: %d" % (count)
+    return "Number of donuts: %d" % (count)
   else:
-  	return "Number of donuts: many"
+    return "Number of donuts: many"
 
 
 # B. both_ends
@@ -39,7 +39,7 @@ def donuts(count):
 def both_ends(s):
   # +++your code here+++
   if len(s) < 2:
-  	return ""
+    return ""
   
   return s[0:2] + s[-2:]
 
