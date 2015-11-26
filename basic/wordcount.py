@@ -54,8 +54,8 @@ def print_words(filename):
     word_list = line.split()
     for word in word_list:
       word = word.lower()
-	    if word not in words:
-	      words[word] = 1
+      if word not in words:
+	words[word] = 1
       else:
         words[word] += 1
 	
@@ -77,11 +77,11 @@ def print_top(filename):
   for line in f:
     word_list = line.split()
     for word in word_list:
-	    word = word.lower()
-	    if word not in words:
-	      words[word] = 1
+      word = word.lower()
+      if word not in words:
+	words[word] = 1
       else:
-	      words[word] += 1
+	words[word] += 1
 	
   f.close()
 	
