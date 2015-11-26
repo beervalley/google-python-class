@@ -60,7 +60,7 @@ def extract_names(filename):
   year = match_year.group(1)
 
   # 2. Here we can use findall() to find all the names and ranks.
-  # Then loop through the list of tuples for putting into dict
+  # Then loop through the list of tuples for putting into dict.
   for line in f:
     match_name = re.search(r'td\>([\d]+).+td\>([\w]+).+td\>([\w]+)', line)
     if match_name:
