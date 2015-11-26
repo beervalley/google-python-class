@@ -52,12 +52,12 @@ def print_words(filename):
 	
   for line in f:
     word_list = line.split()
-      for word in word_list:
-        word = word.lower()
-	if word not in words:
-	  words[word] = 1
-        else:
-          words[word] += 1
+    for word in word_list:
+      word = word.lower()
+	    if word not in words:
+	      words[word] = 1
+      else:
+        words[word] += 1
 	
   f.close()
 	
@@ -76,12 +76,12 @@ def print_top(filename):
 	
   for line in f:
     word_list = line.split()
-      for word in word_list:
-	word = word.lower()
-	if word not in words:
-	  words[word] = 1
-        else:
-	  words[word] += 1
+    for word in word_list:
+	    word = word.lower()
+	    if word not in words:
+	      words[word] = 1
+      else:
+	      words[word] += 1
 	
   f.close()
 	
