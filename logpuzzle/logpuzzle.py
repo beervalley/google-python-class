@@ -19,11 +19,11 @@ Here's what a puzzle url looks like:
 """
 
 def order_url_word(url):
-	match = re.search(r'[\w]+\-([\w]+)\.', url)
-	if match:
-		return match.group(1) 
-	else:
-		return url
+  match = re.search(r'[\w]+\-([\w]+)\.', url)
+  if match:
+    return match.group(1) 
+  else:
+    return url
 
 def read_urls(filename):
   """Returns a list of the puzzle urls from the given log file,
@@ -40,13 +40,13 @@ def read_urls(filename):
   
   f = open(filename, 'rU')
   for line in f:
-  	match = re.search(r'GET\s(.*puzzle.*)\sHTTP', line)
-  	# 2. After searching, remember always check if the result is None or not
-  	if match:
-  		url = match.group(1)
-  		full_url = url_with_servername + url
-  		if full_url not in urllist:
-  			urllist.append(full_url)
+    match = re.search(r'GET\s(.*puzzle.*)\sHTTP', line)
+    # 2. After searching, remember always check if the result is None or not
+    if match:
+      url = match.group(1)
+      full_url = url_with_servername + url
+      if full_url not in urllist:
+        urllist.append(full_url)
   
   # 3. Always remember to close the file after processing it
   f.close()
@@ -65,7 +65,7 @@ def download_images(img_urls, dest_dir):
   # +++your code here+++
   # 4. Check if the dest_dir exists, if not create it
   if not os.path.exists(dest_dir):
-  	os.makedirs(dest_dir)
+    os.makedirs(dest_dir)
   
   # 5. Create a file with the path. It will create a file in the current
   # directory if the path is not given.
@@ -74,15 +74,15 @@ def download_images(img_urls, dest_dir):
   
   i = 0
   for url in img_urls:
-  	print "Retrieving img" + str(i) + " with url: " + url
-  	filename = 'img' + str(i)
-  	# 6. Notice how to use urllib.urlretrieve() with two parameters:
-  	#    first one is the given url to retrieve data, second one is
-  	#    destination filename with *its path*
-  	urllib.urlretrieve(url, os.path.join(dest_dir, filename))
-  	# 7. In html, if only gives filename without path, it will search the current directory for the file.
-  	f.write("<img src=\"" + filename  + "\">")
-  	i += 1
+    print "Retrieving img" + str(i) + " with url: " + url
+    filename = 'img' + str(i)
+    # 6. Notice how to use urllib.urlretrieve() with two parameters:
+    #    first one is the given url to retrieve data, second one is
+    #    destination filename with *its path*
+    urllib.urlretrieve(url, os.path.join(dest_dir, filename))
+    # 7. In html, if only gives filename without path, it will search the current directory for the file.
+    f.write("<img src=\"" + filename  + "\">")
+    i += 1
   
   f.write('\n' + '</body>' + '\n' + '</html>')
   f.close()
