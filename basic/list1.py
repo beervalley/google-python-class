@@ -24,8 +24,8 @@ def match_ends(words):
   # +++your code here+++
   count = 0
   for word in words:
-  	if len(word) >= 2 and word[0] == word[-1]:
-  		count += 1
+    if len(word) >= 2 and word[0] == word[-1]:
+      count += 1
   return count
 
 
@@ -42,10 +42,10 @@ def front_x(words):
   nx_element = []
   
   for word in words:
-  	if word[0] == 'x':
-  		x_element.append(word)
-  	else:
-  		nx_element.append(word)
+    if word[0] == 'x':
+      x_element.append(word)
+    else:
+      nx_element.append(word)
   		
   x_element.sort()
   nx_element.sort()
@@ -61,7 +61,7 @@ def front_x(words):
 # [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 # Hint: use a custom key= function to extract the last element form each tuple.
 def lastEle(tup):
-	return tup[-1]
+  return tup[-1]
 
 def sort_last(tuples):
   # +++your code here+++
@@ -72,14 +72,14 @@ def sort_last(tuples):
   sort_list = []
   
   for tup in tuples:
-  	key = tup[-1]
-  	keys[key] = pos
-  	pos += 1
+    key = tup[-1]
+    keys[key] = pos
+    pos += 1
   	
   keys.keys().sort()
   
   for key in keys.keys():
-  	sort_list.append(tuples[keys[key]])
+    sort_list.append(tuples[keys[key]])
   
   return sort_list   """
   
