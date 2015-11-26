@@ -18,41 +18,41 @@ import commands
 # +++your code here+++
 # Write functions and modify main() to call them
 def get_special_paths(dir):
-	dir_list = []
+  dir_list = []
 	
-	filenames = os.listdir(dir)
+  filenames = os.listdir(dir)
 	
-	for filename in filenames:
-		match = re.search(r'.*__[\w]+__.*', filename)
-		if match:
-			filename = match.group()
-			path = os.path.join(dir, filename)
-			abspath = os.path.abspath(path)
-			dir_list.append(abspath)
+  for filename in filenames:
+    match = re.search(r'.*__[\w]+__.*', filename)
+    if match:
+      filename = match.group()
+      path = os.path.join(dir, filename)
+      abspath = os.path.abspath(path)
+      dir_list.append(abspath)
 	
-	for path in dir_list:
-		print path
+  for path in dir_list:
+    print path
 	
-	return dir_list
+  return dir_list
   
   
 def copy_to(paths, to_dir):
-	if not os.path.exists(to_dir):
-		os.mkdir(to_dir)
+  if not os.path.exists(to_dir):
+    os.mkdir(to_dir)
 	
-	for path in paths:
-		filename = os.path.basename(path)
-		shutil.copy(path, os.path.join(to_dir, filename))
+  for path in paths:
+    filename = os.path.basename(path)
+    shutil.copy(path, os.path.join(to_dir, filename))
 	
 
 def zip_to(paths, zippath):
-	cmd = 'zip -j ' + zippath + ' ' + ' '.join(paths)
-	print "Command I'm going to do:", cmd
+  cmd = 'zip -j ' + zippath + ' ' + ' '.join(paths)
+  print "Command I'm going to do:", cmd
 	
-	(status, output) = commands.getstatusoutput(cmd)
-	if status:
-		sys.stderr.write(output)
-		sys.exit(1)
+  (status, output) = commands.getstatusoutput(cmd)
+  if status:
+    sys.stderr.write(output)
+    sys.exit(1)
 
 
 def main():
